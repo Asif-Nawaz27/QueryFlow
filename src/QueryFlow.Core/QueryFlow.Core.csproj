@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../QueryFlow.Abstractions/QueryFlow.Abstractions.csproj" />
+    <ProjectReference Include="../QueryFlow.Expressions/QueryFlow.Expressions.csproj" />
+    <ProjectReference Include="../QueryFlow.Validation/QueryFlow.Validation.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,44 @@
+@QueryFlow.Samples.WebApi_HostAddress = http://localhost:5157
+
+GET {{QueryFlow.Samples.WebApi_HostAddress}}/books?sort=-price&pageSize=5
+Accept: application/json
+
+###
+
+GET {{QueryFlow.Samples.WebApi_HostAddress}}/books?filter=genre eq Romance and price lt 15&sort=title
+Accept: application/json
+
+###
+
+GET {{QueryFlow.Samples.WebApi_HostAddress}}/books?search=matchmaker
+Accept: application/json
+
+###
+
+GET {{QueryFlow.Samples.WebApi_HostAddress}}/books?fields=id,title,price&pageSize=3
+Accept: application/json
+
+###
+
+GET {{QueryFlow.Samples.WebApi_HostAddress}}/books/cursor?sort=id&pageSize=2
+Accept: application/json
+
+###
+
+GET {{QueryFlow.Samples.WebApi_HostAddress}}/books/1
+Accept: application/json
+
+###
+
+GET {{QueryFlow.Samples.WebApi_HostAddress}}/books/stats?filter=genre eq Mystery
+Accept: application/json
+
+###
+
+GET {{QueryFlow.Samples.WebApi_HostAddress}}/authors?search=austen&include=books
+Accept: application/json
+
+###
+
+GET {{QueryFlow.Samples.WebApi_HostAddress}}/books?filter=notAField eq 1
+Accept: application/json

@@ -1,0 +1,26 @@
+<Solution>
+  <Folder Name="/benchmarks/">
+    <Project Path="benchmarks/QueryFlow.Benchmarks/QueryFlow.Benchmarks.csproj" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/QueryFlow.Samples.WebApi/QueryFlow.Samples.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/QueryFlow.Abstractions/QueryFlow.Abstractions.csproj" />
+    <Project Path="src/QueryFlow.AspNetCore/QueryFlow.AspNetCore.csproj" />
+    <Project Path="src/QueryFlow.Core/QueryFlow.Core.csproj" />
+    <Project Path="src/QueryFlow.Dapper/QueryFlow.Dapper.csproj" />
+    <Project Path="src/QueryFlow.EFCore/QueryFlow.EFCore.csproj" />
+    <Project Path="src/QueryFlow.Expressions/QueryFlow.Expressions.csproj" />
+    <Project Path="src/QueryFlow.OpenApi/QueryFlow.OpenApi.csproj" />
+    <Project Path="src/QueryFlow.Validation/QueryFlow.Validation.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/QueryFlow.AspNetCore.Tests/QueryFlow.AspNetCore.Tests.csproj" />
+    <Project Path="tests/QueryFlow.Core.Tests/QueryFlow.Core.Tests.csproj" />
+    <Project Path="tests/QueryFlow.Dapper.Tests/QueryFlow.Dapper.Tests.csproj" />
+    <Project Path="tests/QueryFlow.EFCore.Tests/QueryFlow.EFCore.Tests.csproj" />
+    <Project Path="tests/QueryFlow.Expressions.Tests/QueryFlow.Expressions.Tests.csproj" />
+    <Project Path="tests/QueryFlow.Validation.Tests/QueryFlow.Validation.Tests.csproj" />
+  </Folder>
+</Solution>

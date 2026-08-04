@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.35" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../QueryFlow.Abstractions/QueryFlow.Abstractions.csproj" />
+    <ProjectReference Include="../QueryFlow.Validation/QueryFlow.Validation.csproj" />
+  </ItemGroup>
+
+</Project>
