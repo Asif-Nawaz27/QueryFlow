@@ -1,4 +1,4 @@
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using QueryFlow.Abstractions.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
@@ -13,16 +13,16 @@ namespace QueryFlow.OpenApi;
 /// </summary>
 public sealed class QueryFlowOperationFilter : IOperationFilter
 {
-    private static readonly (string Name, string Description, string Type)[] StandardParameters =
+    private static readonly (string Name, string Description, JsonSchemaType Type)[] StandardParameters =
     [
-        ("filter", "Filter expression, e.g. `age gt 18 and city eq \"NY\"`.", "string"),
-        ("sort", "Comma-separated sort fields; prefix with `-` for descending, e.g. `LastName,-CreatedDate`.", "string"),
-        ("search", "Free-text search term, matched against the endpoint's configured searchable fields.", "string"),
-        ("fields", "Comma-separated field selection, e.g. `id,name,email`. Omit to return all fields.", "string"),
-        ("include", "Comma-separated navigation properties to eagerly load, e.g. `customer,address`.", "string"),
-        ("page", "1-based page number for offset pagination.", "integer"),
-        ("pageSize", "Number of items per page.", "integer"),
-        ("cursor", "Opaque cursor token for cursor-based pagination; overrides `page` when present.", "string")
+        ("filter", "Filter expression, e.g. `age gt 18 and city eq \"NY\"`.", JsonSchemaType.String),
+        ("sort", "Comma-separated sort fields; prefix with `-` for descending, e.g. `LastName,-CreatedDate`.", JsonSchemaType.String),
+        ("search", "Free-text search term, matched against the endpoint's configured searchable fields.", JsonSchemaType.String),
+        ("fields", "Comma-separated field selection, e.g. `id,name,email`. Omit to return all fields.", JsonSchemaType.String),
+        ("include", "Comma-separated navigation properties to eagerly load, e.g. `customer,address`.", JsonSchemaType.String),
+        ("page", "1-based page number for offset pagination.", JsonSchemaType.Integer),
+        ("pageSize", "Number of items per page.", JsonSchemaType.Integer),
+        ("cursor", "Opaque cursor token for cursor-based pagination; overrides `page` when present.", JsonSchemaType.String)
     ];
 
     public void Apply(OpenApiOperation operation, OperationFilterContext context)

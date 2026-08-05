@@ -20,8 +20,7 @@ public static class AuthorEndpoints
             var result = await query.PaginateAsync(request);
             return Results.Ok(result);
         })
-        .WithName("GetAuthors")
-        .WithOpenApi();
+        .WithName("GetAuthors");
 
         return app;
     }
