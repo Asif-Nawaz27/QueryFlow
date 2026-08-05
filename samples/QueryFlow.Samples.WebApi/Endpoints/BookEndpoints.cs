@@ -38,8 +38,7 @@ public static class BookEndpoints
                 Items = projectedPage.Items.Select(i => i.ToFieldDictionary())
             });
         })
-        .WithName("GetBooks")
-        .WithOpenApi();
+        .WithName("GetBooks");
 
         // GET /books/cursor?sort=id&pageSize=2  ->  response.nextCursor  ->  GET /books/cursor?sort=id&pageSize=2&cursor=<token>
         group.MapGet("/cursor", async (QueryRequestParameter q, LibraryDbContext db) =>
@@ -49,15 +48,13 @@ public static class BookEndpoints
             var page = await query.CursorPaginateAsync(request);
             return Results.Ok(page);
         })
-        .WithName("GetBooksCursor")
-        .WithOpenApi();
+        .WithName("GetBooksCursor");
 
         group.MapGet("/{id:int}", async (int id, LibraryDbContext db) =>
             await db.Books.Include(b => b.Author).FirstOrDefaultAsync(b => b.Id == id) is { } book
                 ? Results.Ok(book)
                 : Results.NotFound())
-        .WithName("GetBookById")
-        .WithOpenApi();
+        .WithName("GetBookById");
 
         // GET /books/stats?filter=genre eq Mystery
         group.MapGet("/stats", async (QueryRequestParameter q, LibraryDbContext db) =>
@@ -77,8 +74,7 @@ public static class BookEndpoints
             var results = await query.AggregateAsync(aggregates, BookQueries.Config);
             return Results.Ok(results);
         })
-        .WithName("GetBookStats")
-        .WithOpenApi();
+        .WithName("GetBookStats");
 
         return app;
     }

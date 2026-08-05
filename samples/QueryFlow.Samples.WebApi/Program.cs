@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using QueryFlow.AspNetCore;
 using QueryFlow.OpenApi;
@@ -7,6 +8,11 @@ using QueryFlow.Samples.WebApi.Endpoints;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<LibraryDbContext>(options => options.UseInMemoryDatabase("QueryFlowSampleLibrary"));
+
+// Author <-> Book is a two-way navigation; without this, serializing an included
+// Author.Books (each Book.Author pointing back) recurses forever.
+builder.Services.ConfigureHttpJsonOptions(options =>
+    options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 builder.Services.AddQueryFlow(options =>
 {

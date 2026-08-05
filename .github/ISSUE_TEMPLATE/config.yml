@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Ask a question / discuss an idea
+    url: https://github.com/Asif-Nawaz27/QueryFlow/discussions
+    about: Use GitHub Discussions for questions and open-ended design conversations rather than an issue.

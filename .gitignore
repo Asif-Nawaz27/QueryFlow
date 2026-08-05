@@ -43,3 +43,4 @@ BenchmarkDotNet.Artifacts/
 *.tmp
 .DS_Store
 Thumbs.db
+/.github/workflows
