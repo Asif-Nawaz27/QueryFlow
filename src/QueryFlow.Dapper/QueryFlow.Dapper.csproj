@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="2.1.89" />
+    <PackageReference Include="Dapper" Version="2.1.100" />
   </ItemGroup>
 
   <ItemGroup>
